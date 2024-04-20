@@ -6,10 +6,10 @@ pwd: "root"
 port: "5432"
 
 twilio_server:
-  account_sid: "AC0db156b865a07196970b1a9b2954235a"    # your twilio sid
-  auth_token: "582229016d7e0d6827e27bb7f2f16634"       # your twilio token
-  from_number: "+16308645805"                          # your twilio number
-  to_number: "+905394929377"                           # the operations center number
+  account_sid: "xxxxxx"         # your twilio sid
+  auth_token: "xxxxx"           # your twilio token
+  from_number: "+1xxxxxxxxx"    # your twilio number
+  to_number: "+90blahblahblah"  # the operations center number
 
 graph:
   A1:
