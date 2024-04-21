@@ -1,4 +1,4 @@
-# Viro Simple Fleet Manager.
+# Viro Simple Fleet Manager (in progress)
 
 This is a ros2 package for AGV fleet management based on Postgresql DB for data storage. The package has two parts, client and master. clients are the robots themselves and the launch file provided is intended for use by each robot to spawn as many robots as possible into the required fleet. However, only one instance of the manager or master may be started. The master provides a CLI for simple understanding and API integration.
 
