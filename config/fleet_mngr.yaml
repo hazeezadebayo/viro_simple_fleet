@@ -6,7 +6,7 @@ pwd: "root"
 port: "5432"
 
 twilio_server:
-  send_sms: "true"                                     # bool - wether or not to send sms
+  send_sms: "false"                                     # bool - wether or not to send sms
   account_sid: "xxxxxx"         # your twilio sid
   auth_token: "xxxxx"           # your twilio token
   from_number: "+1xxxxxxxxx"    # your twilio number
