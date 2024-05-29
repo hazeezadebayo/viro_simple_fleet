@@ -1715,18 +1715,17 @@ class Ui_MainWindow():
                 # print("notifications: ", r_id_, notifications_[0], notifications_[1])
                 if notifications_[0] != notifications_[1]:
 
-                    if str(task_dictionary["twilio_server"]["send_sms"]) == "true":
-                        account_sid = str(task_dictionary["twilio_server"]["account_sid"])
-                        auth_token = str(task_dictionary["twilio_server"]["auth_token"])
-                        from_number = str(task_dictionary["twilio_server"]["from_number"])
-                        to_number = str(task_dictionary["twilio_server"]["to_number"])
-                        client = Client(account_sid, auth_token)
-                        message = client.messages.create(
-                            to = to_number,
-                            from_ = from_number,
-                            body = "Hello! Robot "+r_id_+" in fleet "+f_id+" requires attention "+notifications_[0]+". Please inspect. ")
-                        # print(message.sid, "--> account_sid: ",account_sid, "auth_token: ",auth_token, "from_number: ",from_number, "to_number: ",to_number)
-                        print("[manager]:-twilio sms auth_token verified.")
+                    account_sid = str(task_dictionary["twilio_server"]["account_sid"])
+                    auth_token = str(task_dictionary["twilio_server"]["auth_token"])
+                    from_number = str(task_dictionary["twilio_server"]["from_number"])
+                    to_number = str(task_dictionary["twilio_server"]["to_number"])
+                    client = Client(account_sid, auth_token)
+                    message = client.messages.create(
+                        to = to_number,
+                        from_ = from_number,
+                        body = "Hello! Robot "+r_id_+" in fleet "+f_id+" requires attention "+notifications_[0]+". Please inspect. ")
+                    # print(message.sid, "--> account_sid: ",account_sid, "auth_token: ",auth_token, "from_number: ",from_number, "to_number: ",to_number)
+                    print("[manager]:-twilio sms auth_token verified.")
 
                     notifications_[1] = notifications_[0]
                     self.cur.execute('UPDATE table_robot SET notifications = %s WHERE robot_id = %s;', (','.join(notifications_), r_id_,))
